@@ -1,4 +1,4 @@
-\## jsonbl
+## jsonbl
 ## Coursera: Programing in R
 ## Week 3 Programming Assignment 2
 ## Caching the inverse of a matrix
@@ -7,7 +7,7 @@
 ## The function takes a single value that defines the dimensions of a square matrix filled with random values.
 ## Optional second argument of TRUE/FALSE can be passed to decide if the inverse matrix is cached (default = TRUE) or not
 ## usage example: myMatrix <- makeCacheMatrix(5, cache=TRUE)
-## output is a list that stores a vector, its matrix and its inverse matrix
+## output is a list that stores a vector, its matrix and its inverse matrix (if cache=TRUE)
 ## ex: myMatrix$getv() returns the vector, myMatrix$getm() returns the matrix, and 
 ##     myMatrix$getinv() returns the invers matrix
 
@@ -20,12 +20,11 @@ makeCacheMatrix <- function(x = matrix(), cache=TRUE) {
     getinv <- function(x){
       solve(m)
     }
-    list(getv = getv, getm = getm, getinv = getinv)
   }
   else{
     getinv <- function() inv <- NULL
-    list(getv = getv, getm = getm, getinv = getinv)
   }
+list(getv = getv, getm = getm, getinv = getinv)
 }
 
 ## This function retrieves the inverse matrix from the cache of the first matrix if available. 
